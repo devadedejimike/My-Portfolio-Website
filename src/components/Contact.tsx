@@ -1,6 +1,30 @@
 import { Mail, Github, Linkedin, Twitter } from "lucide-react";
+import { useState } from "react";
 
-const Contact = () => {
+const Contact: React.FC = () => {
+  const [status, setStatus] = useState("");
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    const response = await fetch('https://formspree.io/f/xrbyonqr', {
+      method: "POST",
+      body: data,
+      headers: {
+        accept: 'application/json'
+      }
+    });
+
+    if(response.ok){
+      setStatus("Success");
+      form.reset()
+    }else{
+      setStatus("Error")
+    }
+  }
+
+
   return (
     <section
       id="contact"
@@ -14,20 +38,23 @@ const Contact = () => {
 
       {/* Contact Form */}
       <form
-        onSubmit={(e) => e.preventDefault()}
+        onSubmit={handleSubmit}
         className="max-w-lg mx-auto bg-white shadow-lg rounded-2xl p-6 flex flex-col space-y-4"
       >
         <input
           type="text"
+          name="name"
           placeholder="Your Name"
           className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <input
           type="email"
+          name="email"
           placeholder="Your Email"
           className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <textarea
+          name="message"
           placeholder="Your Message"
           rows={5}
           className="border border-gray-300 rounded-lg px-4 py-2 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -38,6 +65,12 @@ const Contact = () => {
         >
           Send Message
         </button>
+        {status == "Success" && (
+          <p>Message Sent Successfully</p>
+        )}
+        {status == "Error" && (
+          <p>Something went wrong, Please try again</p>
+        )}
       </form>
 
       {/* Social Links */}

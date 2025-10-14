@@ -1,5 +1,5 @@
 import portfolio from '../images/portfolio.jpg';
-import studease from '../images/studease.jpg';
+import studease from '../images/studease.png';
 import todoapp from '../images/todoapp.jpg';
 import buka from '../images/buka.jpg';
 import phonebook from '../images/phonebook.jpg'

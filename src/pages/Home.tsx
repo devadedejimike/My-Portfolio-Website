@@ -1,4 +1,4 @@
-// import myImg from '../images/myImg.jpg'
+
 
 const Home = () => {
     return (
