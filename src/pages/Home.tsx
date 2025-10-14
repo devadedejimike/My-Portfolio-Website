@@ -1,4 +1,4 @@
-
+import MyCV from '../Resume/MyCV.pdf'
 
 const Home = () => {
     return (
@@ -15,8 +15,15 @@ const Home = () => {
                 Passionate about creating exceptional user experiences and writing clean, scalable code.</p>
 
                 <div className="space-x-6 p-3 font-medium">
-                    <button className="px-6 py-3 bg-white rounded-full hover:bg-blue-300 hover:text-white">Hire Me</button>
-                    <button className="px-6 py-3 bg-blue-100 rounded-full hover:bg-blue-300 hover:text-white">Download CV</button>
+                    <button className="px-6 py-3 bg-white rounded-full hover:bg-blue-300 hover:text-white" ><a href="#contact">Hire Me</a></button>
+                    <button className="px-6 py-3 bg-blue-100 rounded-full hover:bg-blue-300 hover:text-white" ><a 
+                        href={MyCV}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        >
+                            Download CV
+                     </a>
+                    </button>
                 </div>
             </section> 
         </div>

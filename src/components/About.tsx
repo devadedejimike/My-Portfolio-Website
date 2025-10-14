@@ -15,9 +15,8 @@ const About = () => {
                 <div className='p-8 md:w-2/3'>
                     <div className='text-3xl font-bold text-blue-600 mb-4'>About Me</div>
                     <p className='text-gray-700 leading-relaxed mb-4'>I&apos;m a passionate <span className='font-semibold'>Fullstack Javascript Developer</span> dedicated to building
-                    modern, scalable, and efficient web applications. I specialize in <span className='font-semibold text-blue-600'>React, Node.js, Express.js, and MongoDB</span>, staying up-to-date with the latest tools and best practices.</p>
-                    <p className='text-gray-700 leading-relaxed'> My approach combines technical precision with design intuition, ensuring every project is
-                    both functional and visually appealing. When I&apos;m not coding, I enjoy exploring new technologies, contributing to and sharing knowledge with the developers community.
+                    modern, scalable, and efficient web applications. I specialize in <span className='font-semibold text-blue-600'>React, TypeScript, Node.js, Express.js, and MongoDB</span>, staying up-to-date with the latest tools and best practices.</p>
+                    <p className='text-gray-700 leading-relaxed'> My approach combines technical precision with design intuition, ensuring every project is both functional and visually appealing. When I&apos;m not coding, I enjoy exploring new technologies, contributing to and sharing knowledge with the developers community.
                     </p>
                 </div>
             </div>
