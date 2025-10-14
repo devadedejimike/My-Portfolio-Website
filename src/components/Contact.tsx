@@ -1,29 +1,34 @@
 import { Mail, Github, Linkedin, Twitter } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Contact: React.FC = () => {
   const [status, setStatus] = useState("");
+
+  useEffect(() => {
+    if (status) {
+      const timer = setTimeout(() => setStatus(""), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [status]);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    const response = await fetch('https://formspree.io/f/xrbyonqr', {
+    const response = await fetch("https://formspree.io/f/xrbyonqr", {
       method: "POST",
       body: data,
-      headers: {
-        accept: 'application/json'
-      }
+      headers: { accept: "application/json" },
     });
 
-    if(response.ok){
+    if (response.ok) {
       setStatus("Success");
-      form.reset()
-    }else{
-      setStatus("Error")
+      form.reset();
+    } else {
+      setStatus("Error");
     }
-  }
-
+  };
 
   return (
     <section
@@ -45,18 +50,21 @@ const Contact: React.FC = () => {
           type="text"
           name="name"
           placeholder="Your Name"
+          required
           className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <input
           type="email"
           name="email"
           placeholder="Your Email"
+          required
           className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <textarea
           name="message"
           placeholder="Your Message"
           rows={5}
+          required
           className="border border-gray-300 rounded-lg px-4 py-2 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <button
@@ -65,11 +73,17 @@ const Contact: React.FC = () => {
         >
           Send Message
         </button>
-        {status == "Success" && (
-          <p>Message Sent Successfully</p>
+
+        {/* Status messages */}
+        {status === "Success" && (
+          <p className="text-green-600 font-medium mt-2">
+            Message sent successfully
+          </p>
         )}
-        {status == "Error" && (
-          <p>Something went wrong, Please try again</p>
+        {status === "Error" && (
+          <p className="text-red-600 font-medium mt-2">
+            Something went wrong. Please try again.
+          </p>
         )}
       </form>
 

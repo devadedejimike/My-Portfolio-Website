@@ -37,21 +37,21 @@ const Footer = () => {
             <Mail size={22} />
           </a>
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/devadedejimike"
             target="_blank"
             className="hover:text-blue-200 transition"
           >
             <Github size={22} />
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://www.linkedin.com/in/adedeji-adeyemi-696193290"
             target="_blank"
             className="hover:text-blue-200 transition"
           >
             <Linkedin size={22} />
           </a>
           <a
-            href="https://twitter.com/yourusername"
+            href="https://twitter.com/devadedejimike"
             target="_blank"
             className="hover:text-blue-200 transition"
           >
