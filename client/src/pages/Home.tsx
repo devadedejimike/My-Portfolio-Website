@@ -1,4 +1,4 @@
-import MyCV from '../Resume/MyCV.pdf'
+import devadedejimikeCV from '../Resume/devadedejimikeCV.pdf'
 
 const Home = () => {
     return (
@@ -17,7 +17,7 @@ const Home = () => {
                 <div className="space-x-6 p-3 font-medium">
                     <button className="px-6 py-3 bg-white rounded-full hover:bg-blue-300 hover:text-white" ><a href="#contact">Hire Me</a></button>
                     <button className="px-6 py-3 bg-blue-100 rounded-full hover:bg-blue-300 hover:text-white" ><a 
-                        href={MyCV}
+                        href={devadedejimikeCV}
                         target='_blank'
                         rel='noopener noreferrer'
                         >

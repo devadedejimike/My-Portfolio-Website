@@ -23,7 +23,7 @@ const Projects: React.FC = () => {
             description: 'A landing page for an authentic Nigerian cuisine served with love in Ibadan',
             stack: ['ReactJs', 'NodeJS', 'TailwindCSS'],
             links: {
-                live: '',
+                live: 'https://bukka-app.pxxl.click',
                 github: 'https://github.com/devadedejimike/Bukka-App',
             },
             img: buka
@@ -34,7 +34,7 @@ const Projects: React.FC = () => {
             description:'A modern and intuitive Todo List web app that helps users organize daily activities — from chores to personal goals. Features CRUD operations powered by a JSON server backend and a clean, responsive UI built with React and TailwindCSS.',
             stack: ['ReactJS', 'TailwindCSS', 'JSON Server'],
             links: {
-                live: '',
+                live: 'https://dailytaskmanager.pxxl.click',
                 github: 'https://github.com/devadedejimike/Todo-List-App-Using-ReactJs',
             },
             img: todoapp
@@ -45,7 +45,7 @@ const Projects: React.FC = () => {
             description: 'Mordern responsive Portfolio website built with React and TailwindCSS. Features smooth animations,etc.',
             stack: ['ReactJs','TypeScript' , 'TailwindCSS', 'ShadCN UI', 'NodeJS'],
             links: {
-                live: '',
+                live: 'https://devadedejimike.pxxl.click',
                 github: 'https://github.com/devadedejimike/My-Portfolio-Website',
             },
             img: portfolio
@@ -57,7 +57,7 @@ const Projects: React.FC = () => {
                 'A simple yet powerful contact management app that lets users add, edit, search, and delete contacts. Built with React and TailwindCSS, and powered by a JSON Server backend for storing and retrieving contact data in real-time.',
             stack: ['ReactJS', 'TailwindCSS', 'JSON Server'],
             links: {
-                live: '',
+                live: 'phonebook-app.pxxl.click',
                 github: 'https://github.com/devadedejimike/Phonebook-App',
             },
             img: phonebook
@@ -114,21 +114,22 @@ const Projects: React.FC = () => {
                                     <a 
                                         href={project.links.live} 
                                         target='_blank' 
-                                        className="text-sm px-3 py-1 rounded-full text-white bg-gray-800 hover:bg-gray-900  transition"
+                                        className="text-sm px-3 py-1 rounded-full text-white bg-blue-600 hover:bg-blue-700 transition"
+                                        
                                     >
-                                        Live
+                                        Live Preview
                                     </a>
                                 )}
-                                {project.links.github && (
+                                {/* {project.links.github && (
                                     <a
                                         href={project.links.github}
                                         target='_blank'
                                         rel='noopener noreferrer'
-                                        className="text-sm px-3 py-1 rounded-full text-white bg-blue-600 hover:bg-blue-700 transition"
+                                        className="text-sm px-3 py-1 rounded-full text-white bg-gray-800 hover:bg-gray-900  transition"
                                     >
                                         Github
                                     </a>
-                                )}
+                                )} */}
                                 
                             </div>
                         </div>
