@@ -3,6 +3,7 @@ import studease from '../images/studease.png';
 import todoapp from '../images/todoapp.jpg';
 import buka from '../images/buka.jpg';
 import phonebook from '../images/phonebook.jpg'
+import nexid from '../images/nexid.jpg'
 
 const Projects: React.FC = () => {
     const projects = [
@@ -61,7 +62,29 @@ const Projects: React.FC = () => {
                 github: 'https://github.com/devadedejimike/Phonebook-App',
             },
             img: phonebook
-        }
+        },
+        {
+            name: 'Daily Task Manager',
+            badge: 'Frontend',
+            description:'A modern and intuitive Todo List web app that helps users organize daily activities — from chores to personal goals. Features CRUD operations powered by a JSON server backend and a clean, responsive UI built with React and TailwindCSS.',
+            stack: ['ReactJS', 'TailwindCSS', 'JSON Server'],
+            links: {
+                live: 'https://dailytaskmanager.pxxl.click',
+                github: 'https://github.com/devadedejimike/Todo-List-App-Using-ReactJs',
+            },
+            img: todoapp
+        },
+        {
+            name: 'NexID Landing Page',
+            badge: 'Frontend',
+            description:'A modern digital identity platform that allows users and organizations to create, manage, and verify secure ID cards using QR-based authentication.',
+            stack: ['ReactJS', 'TailwindCSS', 'JSON Server'],
+            links: {
+                live: 'https://nexid.pxxl.click',
+                github: 'https://github.com/devadedejimike/NexID',
+            },
+            img: nexid
+        },
 
     ] 
     const duplicatedProjects = [...projects, ...projects];
