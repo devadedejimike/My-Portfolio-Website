@@ -31,7 +31,8 @@ const Footer = () => {
         {/* Right Side - Social Icons */}
         <div className="flex justify-center gap-4">
           <a
-            href="mailto:your-email@example.com"
+            href="mailto:devadedejimike@gmail.com"
+            aria-label="Send me a mail"
             className="hover:text-blue-200 transition"
           >
             <Mail size={22} />
@@ -39,12 +40,14 @@ const Footer = () => {
           <a
             href="https://github.com/devadedejimike"
             target="_blank"
+            aria-label="Visit my GitHub profile"
             className="hover:text-blue-200 transition"
           >
             <Github size={22} />
           </a>
           <a
             href="https://www.linkedin.com/in/adedeji-adeyemi-696193290"
+            aria-label="Visit my LinkedIn profile"
             target="_blank"
             className="hover:text-blue-200 transition"
           >
@@ -52,6 +55,7 @@ const Footer = () => {
           </a>
           <a
             href="https://twitter.com/devadedejimike"
+            aria-label="Visit my X profile"
             target="_blank"
             className="hover:text-blue-200 transition"
           >
