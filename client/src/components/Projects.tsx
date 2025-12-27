@@ -64,17 +64,6 @@ const Projects: React.FC = () => {
             img: phonebook
         },
         {
-            name: 'Daily Task Manager',
-            badge: 'Frontend',
-            description:'A modern and intuitive Todo List web app that helps users organize daily activities — from chores to personal goals. Features CRUD operations powered by a JSON server backend and a clean, responsive UI built with React and TailwindCSS.',
-            stack: ['ReactJS', 'TailwindCSS', 'JSON Server'],
-            links: {
-                live: 'https://dailytaskmanager.pxxl.click',
-                github: 'https://github.com/devadedejimike/Todo-List-App-Using-ReactJs',
-            },
-            img: todoapp
-        },
-        {
             name: 'NexID Landing Page',
             badge: 'Frontend',
             description:'A modern digital identity platform that allows users and organizations to create, manage, and verify secure ID cards using QR-based authentication.',
@@ -97,69 +86,64 @@ const Projects: React.FC = () => {
                 <h2 className="font-bold text-3xl text-blue-600">Featured Projects</h2>
                 <p className="text-gray-600 mt-2 max-w-xl mx-auto">A showcase of my recent work built with mordern technologies and thoughtful design.</p>
             </div>
-            <div className="relative w-full overflow-hidden">
-            <div className="flex animate-scroll gap-8 w-max">
-            {duplicatedProjects.map((project, index) => (
-                    <div
+
+            <div className="relative w-full overflow-hidden"> 
+            <div className="flex animate-scroll pause-on-hover gap-8 w-max">
+                {duplicatedProjects.map((project, index) => (
+                <div
                     key={index}
-                    className="flex-none w-[320px] sm:w-[380px] md:w-[420px] bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-[420px] box-border"
-                    >
-                        <img
-                            src={project.img}
-                            alt={project.name}
-                            className="w-full h-48 object-cover rounded-t-2xl"
-                        />
+                    className="flex-none w-[320px] sm:w-[380px] md:w-[420px] bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-[420px] border border-gray-100"
+                >
+                    <img
+                    src={project.img}
+                    alt={project.name}
+                    className="w-full h-48 object-cover rounded-t-2xl"
+                    />
 
-                        <div className="p-4 flex flex-col flex-1 text-left">
-                            <span className="text-xs font-semibold text-blue-600 uppercase">
-                            {project.badge}
-                            </span>
+                    <div className="p-5 flex flex-col flex-1">
+                    <span className="text-xs font-semibold text-blue-600 uppercase tracking-wider">
+                        {project.badge}
+                    </span>
 
-                            <h3 className="text-lg font-bold text-gray-800 mt-1">{project.name}</h3>
+                    <h3 className="text-lg font-bold text-gray-800 mt-1">{project.name}</h3>
 
-                            <p className="text-sm text-gray-600 mt-2 flex-grow overflow-hidden whitespace-normal break-words">
-                            {project.description}
-                            </p>
+                    <p className="text-sm text-gray-600 mt-2 line-clamp-3">
+                        {project.description}
+                    </p>
 
-                            <div className="flex flex-wrap gap-2 mt-auto">
-                            {project.stack.map((tech) => (
-                                <span
-                                key={tech}
-                                className="text-xs bg-blue-100 text-blue-600 font-medium px-2 py-1 rounded-full"
-                                >
-                                {tech}
-                                </span>
-                            ))}
-                            </div>
-
-                            <div className="flex gap-3 mt-4">
-                                {project.links.live && (
-                                    <a 
-                                        href={project.links.live} 
-                                        target='_blank' 
-                                        className="text-sm px-3 py-1 rounded-full text-white bg-blue-600 hover:bg-blue-700 transition"
-                                        
-                                    >
-                                        Live Preview
-                                    </a>
-                                )}
-                                {/* {project.links.github && (
-                                    <a
-                                        href={project.links.github}
-                                        target='_blank'
-                                        rel='noopener noreferrer'
-                                        className="text-sm px-3 py-1 rounded-full text-white bg-gray-800 hover:bg-gray-900  transition"
-                                    >
-                                        Github
-                                    </a>
-                                )} */}
-                                
-                            </div>
-                        </div>
+                    <div className="flex flex-wrap gap-2 mt-4">
+                        {project.stack.map((tech) => (
+                        <span key={tech} className="text-[10px] bg-blue-50 text-blue-700 font-bold px-2 py-1 rounded-md border border-blue-100">
+                            {tech}
+                        </span>
+                        ))}
                     </div>
 
-                ))}
+                    {/* Improved Buttons */}
+                    <div className="flex gap-3 mt-auto pt-4">
+                        {project.links.live && (
+                        <a 
+                            href={project.links.live} 
+                            target='_blank' 
+                            className="text-xs font-bold px-4 py-2 rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition shadow-sm"
+                        >
+                            Live Demo
+                        </a>
+                        )}
+                        {project.links.github && (
+                        <a
+                            href={project.links.github}
+                            target='_blank'
+                            className="text-xs font-bold px-4 py-2 rounded-lg text-gray-700 bg-gray-100 hover:bg-gray-200 transition border border-gray-200"
+                        >
+                            Code
+                        </a>
+                        )}
+                    </div>
+                    </div>
                 </div>
+                ))}
+            </div>
             </div>
 
         </section>
