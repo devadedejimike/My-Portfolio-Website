@@ -7,7 +7,7 @@ const About = () => {
             <div className='mx-auto mb-12 max-w-3xl overflow-hidden bg-white rounded-2xl shadow-xl md:flex'>
                 <div className='md:w-1/3 flex justify-center items-center bg-blue-100'>
                     <img
-                        className='h-56 w-56 md:h-64 md:w-64 object-cover rounded-full md:rounded-none md:rounded-1-2xl shadow-xl' 
+                        className='h-full w-full md:h-full md:w-full object-covers shadow-xl' 
                         src={PP}
                         alt="Adeyemi Adedeji Michael"
                     />
