@@ -33,7 +33,7 @@ const Projects: React.FC = () => {
         {
             name: 'ChatApp Landing Page',
             badge: 'Frontend',
-            description:'',
+            description:'A modern landing page for a messaging app, featuring a clean UI and fully responsive layout.',
             stack: ['ReactJS', 'TailwindCSS', 'Typescript'],
             links: {
                 live: 'https://chat.pxxl.click',
