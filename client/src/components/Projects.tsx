@@ -1,9 +1,10 @@
 import portfolio from '../images/portfolio.jpg';
 import studease from '../images/studease.png';
 import todoapp from '../images/todoapp.jpg';
-import buka from '../images/buka.jpg';
+import buka from '../images/buka.png';
 import phonebook from '../images/phonebook.jpg'
 import nexid from '../images/nexid.jpg'
+import chat from '../images/chat.jpg'
 
 const Projects: React.FC = () => {
     const projects = [
@@ -30,12 +31,34 @@ const Projects: React.FC = () => {
             img: buka
         },
         {
+            name: 'ChatApp Landing Page',
+            badge: 'Frontend',
+            description:'',
+            stack: ['ReactJS', 'TailwindCSS', 'Typescript'],
+            links: {
+                live: 'https://chat.pxxl.click',
+                github: 'https://github.com/devadedejimike/Chat-Frontend',
+            },
+            img: chat
+        },
+        {
+            name: 'NexID Landing Page',
+            badge: 'Frontend',
+            description:'A modern digital identity platform that allows users and organizations to create, manage, and verify secure ID cards using QR-based authentication.',
+            stack: ['ReactJS', 'TailwindCSS', 'JSON Server'],
+            links: {
+                live: 'https://nexid.pxxl.click',
+                github: 'https://github.com/devadedejimike/NexID',
+            },
+            img: nexid
+        },
+        {
             name: 'Daily Task Manager',
             badge: 'Frontend',
             description:'A modern and intuitive Todo List web app that helps users organize daily activities — from chores to personal goals. Features CRUD operations powered by a JSON server backend and a clean, responsive UI built with React and TailwindCSS.',
             stack: ['ReactJS', 'TailwindCSS', 'JSON Server'],
             links: {
-                live: 'https://dailytaskmanager.pxxl.click',
+                live: '',
                 github: 'https://github.com/devadedejimike/Todo-List-App-Using-ReactJs',
             },
             img: todoapp
@@ -58,23 +81,11 @@ const Projects: React.FC = () => {
                 'A simple yet powerful contact management app that lets users add, edit, search, and delete contacts. Built with React and TailwindCSS, and powered by a JSON Server backend for storing and retrieving contact data in real-time.',
             stack: ['ReactJS', 'TailwindCSS', 'JSON Server'],
             links: {
-                live: 'phonebook-app.pxxl.click',
+                live: '',
                 github: 'https://github.com/devadedejimike/Phonebook-App',
             },
             img: phonebook
         },
-        {
-            name: 'NexID Landing Page',
-            badge: 'Frontend',
-            description:'A modern digital identity platform that allows users and organizations to create, manage, and verify secure ID cards using QR-based authentication.',
-            stack: ['ReactJS', 'TailwindCSS', 'JSON Server'],
-            links: {
-                live: 'https://nexid.pxxl.click',
-                github: 'https://github.com/devadedejimike/NexID',
-            },
-            img: nexid
-        },
-
     ] 
     const duplicatedProjects = [...projects, ...projects];
     return (
