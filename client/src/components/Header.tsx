@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Home, User, FolderKanban, Mail } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Navbar: React.FC = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -14,7 +15,7 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     const observerOptions = {
       root: null,
-      rootMargin: "-40% 0px -40% 0px", 
+      rootMargin: "-40% 0px -40% 0px",
       threshold: 0,
     };
 
@@ -28,7 +29,6 @@ const Navbar: React.FC = () => {
 
     const observer = new IntersectionObserver(handleIntersection, observerOptions);
 
-    // Observe all sections that have an ID matching our links
     links.forEach((link) => {
       const section = document.getElementById(link.id);
       if (section) observer.observe(section);
@@ -46,23 +46,48 @@ const Navbar: React.FC = () => {
 
   return (
     <div className="flex justify-center items-center">
-      <nav className="fixed top-4 bg-white/80 backdrop-blur-md rounded-full shadow-lg px-6 py-3 flex items-center justify-center gap-6 transition-all duration-300 z-50 border border-gray-100">
-        {links.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            onClick={(e) => handleScroll(e, link.href)}
-            title={link.name}
-            className={`transition-all duration-300 p-2 rounded-full ${
-              activeSection === link.id 
-              ? "text-blue-600 bg-blue-50 scale-110" 
-              : "text-gray-500 hover:text-blue-500"
-            }`}
-          >
-            {link.icon}
-          </a>
-        ))}
-      </nav>
+      <motion.nav
+        initial={{ y: -40, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        className="fixed top-4 bg-white/80 backdrop-blur-md rounded-full shadow-lg px-6 py-3 flex items-center justify-center gap-6 z-50 border border-gray-100"
+      >
+        {links.map((link) => {
+          const isActive = activeSection === link.id;
+
+          return (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={(e) => handleScroll(e, link.href)}
+              title={link.name}
+              className="relative flex items-center justify-center"
+            >
+              {/* Animated Active Bubble */}
+              {isActive && (
+                <motion.span
+                  layoutId="activeBubble"
+                  transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                  className="absolute inset-0 bg-blue-50 rounded-full"
+                />
+              )}
+
+              {/* Icon */}
+              <motion.span
+                whileHover={{ y: -3 }}
+                whileTap={{ scale: 0.9 }}
+                className={`relative z-10 p-2 rounded-full transition-all duration-300 ${
+                  isActive
+                    ? "text-blue-600"
+                    : "text-gray-500 hover:text-blue-500"
+                }`}
+              >
+                {link.icon}
+              </motion.span>
+            </a>
+          );
+        })}
+      </motion.nav>
     </div>
   );
 };
